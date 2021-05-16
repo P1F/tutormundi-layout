@@ -10,6 +10,7 @@ const StarIconWrapper = styled.ul`
     li {
       display: inline-block;
       transition: 0.2s;
+      margin-left: 6px;
 
       &:hover {
         ${props => props.EditMode && 'transform: scale(1.3);'}
@@ -22,22 +23,22 @@ function RatingIcon(props) {
   const [rating, setRating] = useState(0);
   const [EditMode, setEditMode] = useState(true);
 
-  function handleHoverRating(idx) {
+  function handleHover(idx) {
     setHoverRating(idx);
   }
 
-  function handleRating(){
+  function handleClick(){
     setEditMode(!EditMode);
-    setRating(hoverRating);
+    setRating(EditMode ? hoverRating : 0);
   }
 
   return (
     <StarIconWrapper EditMode={EditMode}>
       {[...Array(5)].map((x, i) => {
         return (
-          <li onMouseOver={() => handleHoverRating(i+1)}
-              onClick={handleRating}
-              onMouseLeave={() => handleHoverRating(0)} >
+          <li onMouseOver={() => handleHover(i+1)}
+              onClick={handleClick}
+              onMouseLeave={() => handleHover(0)} >
             <StarIcon filled={(i+1 <= hoverRating && EditMode) || (i+1 <= rating && !EditMode)}/>
           </li>
         );

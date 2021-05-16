@@ -3,6 +3,10 @@ import StarEmpty from "../../resources/img/estrelaw.svg";
 import styled from "styled-components";
 
 const ImgWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
   img {
     width: 31px;
     height: 30px;

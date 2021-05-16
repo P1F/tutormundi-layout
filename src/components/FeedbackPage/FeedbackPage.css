@@ -1,14 +1,18 @@
-img {
+img[alt="Livro"] {
+  margin-top: 101px;
   width: 132.4px;
   height: 150px;
   padding: 2.4px 2.9px 2.4px 2px;
 }
 
 .Como-foi-a-ajuda-do {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   width: 292px;
   height: 68px;
-  margin: 12px auto;
+  margin: 24px auto;
   font-size: 34px;
   font-weight: 600;
   font-stretch: normal;
@@ -103,4 +107,10 @@ img {
 
 .Pular:hover {
   transform: scale(1.2);
+}
+
+.Avaliacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
