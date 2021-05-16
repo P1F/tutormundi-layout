@@ -15,12 +15,14 @@ const StarIconWrapper = styled.ul`
 function RatingIcon(props) {
   const [hoverRating, setHoverRating] = useState(0);
   const [rating, setRating] = useState(0);
+  const [edit, setEdit] = useState(true);
 
   function handleHoverRating(idx) {
     setHoverRating(idx);
   }
 
   function handleRating(){
+    setEdit(!edit);
     setRating(hoverRating);
   }
 
@@ -29,9 +31,9 @@ function RatingIcon(props) {
       {[...Array(5)].map((x, i) => {
         return (
           <li onMouseOver={() => handleHoverRating(i+1)}
-              onClick={() => handleRating}
-              onMouseLeave={() => handleHoverRating(0)}>
-            <StarIcon filled={i+1 <= hoverRating}/>
+              onClick={handleRating}
+              onMouseLeave={() => handleHoverRating(0)} >
+            <StarIcon filled={(i+1 <= hoverRating && edit) || (i+1 <= rating && !edit)}/>
           </li>
         );
       })}
