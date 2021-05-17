@@ -4,6 +4,7 @@ import CaniveteIcon from "../GeneralPurpose/CaniveteIcon";
 import CheckedIcon from "../GeneralPurpose/CheckedIcon";
 import SmileIcon from "../GeneralPurpose/SmileIcon";
 import styled from "styled-components";
+import { useState } from "react";
 
 const BoxesWrapper = styled.div`
   display: flex;
@@ -23,19 +24,30 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   color: #2cc6d0;
+  cursor: pointer;
 
   margin: ${(props) => props.theme.box_margin};
-  padding: ${(props) => props.theme.box_padding};
+  //padding: ${(props) => props.theme.box_padding};
 
-  &:hover {
+  ${(props) =>
+    props.hoverOn &&
+    `&:hover {
     color: #ffffff;
     background-color: #2cc6d0;
     svg g {
-      fill: ${(props) =>
-        props.theme["fill"] === undefined ? "none" : props.theme.fill};
+      fill: ${props.theme.fill === undefined ? "none" : props.theme.fill};
       stroke: #ffffff;
     }
-  }
+  }`}
+
+  ${(props) =>
+    props.active &&
+    `color: #ffffff;
+    background-color: #2cc6d0;
+    svg g {
+      fill: ${props.theme.fill === undefined ? "none" : props.theme.fill};
+      stroke: #ffffff;
+    }`}
 
   svg {
     width: ${(props) => props.theme.svg_width};
@@ -60,7 +72,7 @@ const Box = styled.div`
 
 const theme = {
   lampada: {
-    box_margin: "12px 11px 24px 356px",
+    box_margin: "12px 11px 24px 0px",
     box_padding: "18px 12px",
     svg_width: "30px",
     svg_height: "36px",
@@ -94,7 +106,7 @@ const theme = {
     svg_width: "29.1px",
     svg_height: "36px",
     svg_margin: "0 17.9px 6px 17px",
-    svg_padding: "13.8px 6.9px 12.5px",
+    svg_padding: "3.2px 6.9px 0px",
     span_margin: "6px 0 0",
   },
   smileFace: {
@@ -103,34 +115,46 @@ const theme = {
     svg_width: "34px",
     svg_height: "34px",
     svg_margin: "0 15px 8px",
-    svg_padding: "9.3px 7.2px 8.2px 8.2px",
+    svg_padding: "0px 7.2px 0px 8.2px",
     span_margin: "8px 0 0",
   },
 };
 
-function Boxes() {
+const boxes = [
+  { theme: "lampada", msg: "Estimula a criatividade", icon: <LampadaIcon /> },
+  { theme: "lupa", msg: "Estimula a curiosidade", icon: <LupaIcon /> },
+  { theme: "canivete", msg: "Se adapta à necessidade", icon: <CaniveteIcon /> },
+  { theme: "checkedSheet", msg: "Ótima didática", icon: <CheckedIcon /> },
+  { theme: "smileFace", msg: "Gente boasíssima", icon: <SmileIcon /> },
+];
+
+function Boxes(props) {
+  const [activeBox, setActiveBox] = useState(-1);
+  const [hoverOn, setHoverOn] = useState(true);
+
+  function handleClick(idx) {
+    setActiveBox(idx);
+    setHoverOn(false);
+  }
+
   return (
     <BoxesWrapper>
-      <Box theme={theme.lampada}>
-        <LampadaIcon />
-        <span className="ElogioBox">Estimula a criatividade</span>
-      </Box>
-      <Box theme={theme.lupa}>
-        <LupaIcon />
-        <span className="ElogioBox">Estimula a curiosidade</span>
-      </Box>
-      <Box theme={theme.canivete}>
-        <CaniveteIcon />
-        <span className="ElogioBox">Se adapta à necessidade</span>
-      </Box>
-      <Box theme={theme.checkedSheet}>
-        <CheckedIcon />
-        <span className="ElogioBox">Ótima didática</span>
-      </Box>
-      <Box theme={theme.smileFace}>
-        <SmileIcon />
-        <span className="ElogioBox">Gente boasíssima</span>
-      </Box>
+      {boxes.map((box, idx) => {
+        return (
+          <Box
+            hoverOn={hoverOn}
+            active={idx === activeBox}
+            theme={theme[box.theme]}
+            onClick={() => {
+              props.onClick(box.msg);
+              handleClick(idx);
+            }}
+          >
+            {box.icon}
+            <span className="ElogioBox">{box.msg}</span>
+          </Box>
+        );
+      })}
     </BoxesWrapper>
   );
 }

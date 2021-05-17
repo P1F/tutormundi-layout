@@ -7,24 +7,12 @@ function ExtendedFeedback(props) {
     <div className="ExtendedFeedback">
       <div className="Escolha-elogio">
         <span className="Envie-um-elogio">Envie um elogio</span>
-        <Boxes />
+        <Boxes onClick={props.onBoxClick} />
       </div>
       <div className="Recado">
         <span className="Deixe-um-recado">Deixe um recado</span>
         <div className="CommentBox">
-          <span>
-            Tutor muito atencioso fez tudo que eu queria uma delicia ele muito
-            bom mesmo recomenndo ta de parabens o cara fez o pasoso a psso
-            direitinho nossa sinhora que cara foda Tutor muito atencioso fez
-            tudo que eu queria uma delicia ele muito bom mesmo recomenndo ta de
-            parabens o cara fez o pasoso a psso direitinho nossa sinhora que
-            cara foda Tutor muito atencioso fez tudo que eu queria uma delicia
-            ele muito bom mesmo recomenndo ta de parabens o cara fez o pasoso a
-            psso direitinho nossa sinhora que cara foda Tutor muito atencioso
-            fez tudo que eu queria uma delicia ele muito bom mesmo recomenndo ta
-            de parabens o cara fez o pasoso a psso direitinho nossa sinhora que
-            cara foda
-          </span>
+          <textarea name="comment-area" rows="5" maxLength={230} />
         </div>
       </div>
     </div>

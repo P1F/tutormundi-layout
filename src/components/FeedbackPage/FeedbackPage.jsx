@@ -6,9 +6,16 @@ import { useState } from "react";
 
 function FeedbackPage() {
   const [showFeedback, setShowFeedback] = useState(false);
+  const [elogio, setElogio] = useState("");
+  const [recado, setRecado] = useState("");
+  const [rating, setRating] = useState(0);
 
   function handleElogiarClick() {
     if (!showFeedback) setShowFeedback(true);
+  }
+
+  function handleBoxClick(msg) {
+    setElogio(msg);
   }
 
   return (
@@ -27,7 +34,7 @@ function FeedbackPage() {
 
       <RatingIcon lock={showFeedback} />
 
-      {showFeedback && <ExtendedFeedback />}
+      {showFeedback && <ExtendedFeedback onBoxClick={handleBoxClick} />}
 
       <div className="Avaliacao">
         {!showFeedback && (

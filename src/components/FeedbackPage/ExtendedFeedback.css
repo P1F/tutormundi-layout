@@ -1,12 +1,26 @@
 .ExtendedFeedback {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-left: 356px;
 }
 
-.Deixe-um-recado {
-  width: 123px;
+.Escolha-elogio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Recado {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Envie-um-elogio {
+  width: 144px;
   height: 24px;
-  margin: 23px 4px 12px 356px;
+  margin: 63px 56px 12px 0px;
   font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
@@ -16,10 +30,10 @@
   color: #000000;
 }
 
-.Envie-um-elogio {
-  width: 144px;
+.Deixe-um-recado {
+  width: 123px;
   height: 24px;
-  margin: 60px 56px 12px 356px;
+  margin: 23px 4px 12px 0px;
   font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
@@ -32,16 +46,17 @@
 .CommentBox {
   width: 488px;
   height: 115px;
-  margin: 12px 356px 60px;
+  margin: 12px 0px 60px;
   padding: 11px 21px 60px 20px;
   border-radius: 4px;
   border: solid 2px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
 }
 
-.CommentBox > span {
+.CommentBox > textarea {
+  border: none;
+  outline: none;
   width: 447px;
-  height: 44px;
+  height: 100%;
   opacity: 0.5;
   font-size: 16px;
   font-weight: normal;
