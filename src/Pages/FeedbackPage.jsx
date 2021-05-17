@@ -1,7 +1,7 @@
-import BookImg from "../../resources/img/livro.png";
+import BookImg from "../resources/img/livro.png";
 import "./FeedbackPage.css";
-import RatingIcon from "../GeneralPurpose/RatingIcon";
-import ExtendedFeedback from "./ExtendedFeedback";
+import RatingIcon from "../components/GeneralPurpose/RatingIcon";
+import ExtendedFeedback from "../components/ExtendedFeedback";
 import { useState } from "react";
 
 function FeedbackPage() {
@@ -24,13 +24,6 @@ function FeedbackPage() {
       <div className="Como-foi-a-ajuda-do">
         <p>Como foi a ajuda do tutor?</p>
       </div>
-
-      {/* Cuidados para tomar:
-              1.  Quando estiver na escolha da avaliação,
-                  não permitir que os botões de confirmar
-                  e pular sejam selecionados e que seus
-                  efeitos sejam desabilitados
-        */}
 
       <RatingIcon lock={showFeedback} />
 

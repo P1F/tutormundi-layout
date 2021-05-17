@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Boxes from "./Boxes";
 import "./ExtendedFeedback.css";
 

@@ -2,18 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 100%;
 }
 
 .Escolha-elogio {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .Recado {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .Envie-um-elogio {

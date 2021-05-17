@@ -1,8 +1,8 @@
-import LampadaIcon from "../GeneralPurpose/LampadaIcon";
-import LupaIcon from "../GeneralPurpose/LupaIcon";
-import CaniveteIcon from "../GeneralPurpose/CaniveteIcon";
-import CheckedIcon from "../GeneralPurpose/CheckedIcon";
-import SmileIcon from "../GeneralPurpose/SmileIcon";
+import LampadaIcon from "./GeneralPurpose/LampadaIcon";
+import LupaIcon from "./GeneralPurpose/LupaIcon";
+import CaniveteIcon from "./GeneralPurpose/CaniveteIcon";
+import CheckedIcon from "./GeneralPurpose/CheckedIcon";
+import SmileIcon from "./GeneralPurpose/SmileIcon";
 import styled from "styled-components";
 import { useState } from "react";
 
@@ -10,12 +10,12 @@ const BoxesWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  overflow-x: auto;
 `;
 
 const Box = styled.div`
-  width: 88px;
-  height: 102px;
+  width: 68px;
+  height: auto;
   border-radius: 4px;
   border: solid 2px #2cc6d0;
   transition: 0.3s;
@@ -27,7 +27,7 @@ const Box = styled.div`
   cursor: pointer;
 
   margin: ${(props) => props.theme.box_margin};
-  //padding: ${(props) => props.theme.box_padding};
+  padding: ${(props) => props.theme.box_padding};
 
   ${(props) =>
     props.hoverOn &&

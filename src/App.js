@@ -1,5 +1,5 @@
 import React from "react";
-import FeedbackPage from "./components/FeedbackPage/FeedbackPage";
+import FeedbackPage from "./Pages/FeedbackPage";
 import "./App.css";
 
 function App() {
