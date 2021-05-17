@@ -82,7 +82,7 @@ const theme = {
     span_margin: "6px 0 0",
   },
   lupa: {
-    box_margin: "12px 12px 24px",
+    box_margin: "12px 12px 24px 0px",
     box_padding: "20px 12px 18px",
     svg_width: "32px",
     svg_height: "32px",
@@ -92,7 +92,7 @@ const theme = {
     span_margin: "8px 0 0",
   },
   canivete: {
-    box_margin: "12px 12px 24px",
+    box_margin: "12px 12px 24px 0px",
     box_padding: "18px 12px",
     svg_width: "38px",
     svg_height: "38px",
@@ -101,7 +101,7 @@ const theme = {
     span_margin: "4px 0 0",
   },
   checkedSheet: {
-    box_margin: "12px 12px 24px",
+    box_margin: "12px 12px 24px 0px",
     box_padding: "18px 12px",
     svg_width: "29.1px",
     svg_height: "36px",
@@ -110,7 +110,7 @@ const theme = {
     span_margin: "6px 0 0",
   },
   smileFace: {
-    box_margin: "13px 356px 23px 9px",
+    box_margin: "13px 0px 23px",
     box_padding: "18px 12px",
     svg_width: "34px",
     svg_height: "34px",
